@@ -1,0 +1,97 @@
+
+@mixin transition($type, $time, $ease) {
+	-webkit-transition: $type $time $ease;
+	-moz-transition: $type $time $ease;
+	-ms-transition: $type $time $ease;
+	-o-transition: $type $time $ease;
+	transition: $type $time $ease;
+}
+
+@mixin bkgsize($type) {
+	-webkit-background-size: $type;
+	-moz-background-size: $type;
+	-ms-background-size: $type;
+	-o-background-size: $type;
+	background-size: $type;
+}
+
+@mixin boxsize($type) {
+	-webkit-box-sizing: $type;
+	-moz-box-sizing: $type;
+	-ms-box-sizing: $type;
+	-o-box-sizing: $type;
+	box-sizing: $type;
+}
+
+@mixin fontface($style-name, $file, $weight, $style) {
+	$filepath: "../fonts/" + $file;
+	@font-face {
+		font-family: "#{$style-name}";
+		src: 	url($filepath + ".eot");
+		src: 	url($filepath + ".eot?#iefix") format('embedded-opentype'),
+				url($filepath + ".woff") format('woff'),
+				url($filepath + ".ttf")  format('truetype');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+@mixin animation($str) {					//USAGE:  @include animation('slide-down 5s 3');
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};      
+}
+
+@mixin opacity($opacity) {					//USAGE:  @include opacity(0.8);
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie);
+}
+
+
+//TRANSFORMS
+@mixin transform($transforms) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+ 
+
+@mixin scale($scale) {
+	@include transform(scale($scale));
+} 
+
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+@mixin skew ($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin transform-origin ($origin) {
+	moz-transform-origin: $origin;
+	-o-transform-origin: $origin;
+	-ms-transform-origin: $origin;
+	-webkit-transform-origin: $origin;
+	transform-origin: $origin;
+}
+
+
+//FORMS
+@mixin no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

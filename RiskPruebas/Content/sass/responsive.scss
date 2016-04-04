@@ -1,0 +1,145 @@
+/*
+	*********************************************************************************************************************
+	Custom RESPONSIVE SASS - Project: Loan Pricing - Acceleris
+	Design & Front development: ElEquipoE
+	Tasks: Html / Css / jQuery
+	Client: The Analytics Boutique
+	Version: 1.0
+	********************************************************************************************************************
+*/
+
+
+
+
+
+
+/* *********************************************************************************************************************
+ * IMPORTS
+ */
+
+@import "_mixins";
+@import "_penner-easing";
+
+
+
+
+
+/* *********************************************************************************************************************
+ * VARS
+ */
+
+$accent: #8098a7;
+$grey: #999999;
+$light-grey: #f8f8f8;
+$blue: #64c5da;
+$orange: #e4c04f;
+
+
+
+
+
+
+
+
+
+
+
+
+/* *********************************************************************************************************************
+ * >1200 SCREENS 
+ */
+@media screen and (min-width: 1200px) {
+	
+	.row-no-padding {
+		[class*="col-"] {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+	}
+
+	.table {
+
+		tbody > tr > td {
+			width: 100px;
+		}
+	}
+
+} // END MEDIA QUERIE
+
+
+
+
+	
+
+
+
+
+/* *********************************************************************************************************************
+ * 1024 TO 1280 SCREENS 
+ */
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+
+	.table {
+
+		.td-large {
+			min-width: initial;
+		}
+	}
+
+} // END MEDIA QUERIE
+
+
+
+
+
+
+
+
+
+/* *********************************************************************************************************************
+ * PORTRAIT TABLET TO LANDSCAPE AND DESKTOP  - 768 TO 992
+ */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+
+	.logo-loan {
+		margin-top: 36px;
+
+		img {
+			width: 180px;
+		}		
+	}
+
+	.row {
+
+		div.no-padding {
+			padding: 0 15px !important;
+		}
+	}
+
+	.status-box {
+		float: none !important;
+	}
+
+} // END MEDIA QUERIE
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *********************************************************************************************************************
+ * LANDSCAPE MOBILES AND DOWN  < 767
+ */
+@media screen and (max-width: 767px) {
+	
+	
+	
+} // END MEDIA QUERIE
+
